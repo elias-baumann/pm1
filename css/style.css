@@ -1,0 +1,238 @@
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.4;
+  color: #111;
+  background: #fff;
+}
+
+/* Page padding */
+.page {
+  padding: clamp(12px, 3vw, 28px);
+}
+
+/* Table */
+.essay-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* important: respects colgroup widths */
+}
+
+/* Visible grid like your red structure */
+.essay-table td {
+  /* red grid lines */
+  /* border: 2px solid #e53935; */
+  vertical-align: top;
+}
+
+/* Cell padding + default text sizing */
+.cell {
+  padding: clamp(10px, 2vw, 8px);
+}
+
+/* .first-row {
+  position: fixed;
+  background-color: white;
+} */
+
+/* Typography */
+.cell-title h1 {
+  margin: 0;
+  font-size: clamp(28px, 3.2vw, 48px);
+  font-weight: 500;
+  line-height: 80%;
+}
+
+.text-title {
+  font-weight: bolder;
+  padding-top: 30px;
+}
+
+.cell-headline h2 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.cell-author p {
+  margin: 0;
+  font-size: clamp(14px, 1.4vw, 18px);
+  color: #eb3b5a;
+}
+
+.cell-lefttext p,
+.cell-body p {
+  margin: 0;
+  font-size: clamp(20px, 1.4vw, 18px);
+}
+
+.cell-individual-topic p {
+  margin: 0;
+  font-weight: bold;
+  font-style: italic;
+  font-size: clamp(14px, 1.7vw, 100px);
+  line-height: 100%;
+}
+
+.cell-chapter-title p {
+  margin: 0;
+  color: #eb3b5a;
+  font-size: clamp(14px, 1.4vw, 18px);
+  font-style: italic;
+  font-weight: bold;
+}
+
+.cell-choice-title p {
+  margin: 0;
+  color: #eb3b5a;
+  font-size: clamp(22px, 1.4vw, 18px);
+  font-style: italic;
+  font-weight: bold;
+}
+
+.cell-gif-left img {
+  width: 100%;
+  height: 100%;
+}
+
+.cell-gif-right img {
+  width: 50%;
+  height: auto;
+}
+
+.cell-logo img {
+  width: 30%;
+}
+
+.cell-img img {
+  width: 100%;
+}
+
+.cell-cover img {
+  width: 50%;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.video-wrapper video {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ff0055;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  font-size: 32px;
+  cursor: pointer;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.video-wrapper.is-playing .play-btn {
+  display: none;
+}
+
+.fs-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+.fs-btn:hover,
+.play-btn:hover {
+  opacity: 1;
+}
+
+.play-btn:hover {
+  opacity: 1;
+}
+a {
+  text-decoration: none;
+  color: #111;
+}
+
+/* Responsive: stack cells for readable mobile */
+@media (max-width: 700px) {
+  .essay-table,
+  .essay-table tbody,
+  .essay-table tr,
+  .essay-table td {
+    display: block;
+    width: 100%;
+  }
+
+  /* Keep some separation between stacked blocks */
+  .essay-table tr {
+    margin-bottom: 12px;
+  }
+}
+
+/* -----------------------------------
+   Vertical alignment helpers per cell
+----------------------------------- */
+
+/* oben (default bei Tabellen, explizit für Klarheit) */
+.align-top {
+  vertical-align: top;
+}
+
+/* zentriert */
+.align-center {
+  vertical-align: middle;
+}
+
+/* unten */
+.align-bottom {
+  vertical-align: bottom;
+}
+
+/* 
+Optional: Falls du Flexbox pro Zelle willst 
+(z.B. für komplexere Inhalte)
+*/
+.cell.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell.flex.align-top {
+  justify-content: flex-start;
+}
+
+.cell.flex.align-center {
+  justify-content: center;
+}
+
+.cell.flex.align-bottom {
+  justify-content: flex-end;
+}
