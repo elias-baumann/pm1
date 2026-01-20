@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Project Module 1</title>
     <link rel="stylesheet" href="css/style.css" />
 
@@ -57,7 +58,23 @@
 
           <!-- Row 1.75 -->
           <tr>
-            <td class="cell"></td>
+            <td class="cell cell-body cell-video">
+              <div class="video-wrapper">
+                <video id="video3" preload="metadata" playsinline>
+                  <source
+                    src="media/mp4/presentation-web.mp4"
+                    type="video/mp4"
+                  />
+                  Dein Browser unterstützt kein Video.
+                </video>
+                <button class="play-btn" type="button" aria-label="Play/Pause">
+                  ▶
+                </button>
+                <button class="fs-btn" type="button" aria-label="Fullscreen">
+                  ⤢
+                </button>
+              </div>
+            </td>
 
             <td class="cell"></td>
             <td class="cell cell-chapter-title">
@@ -146,5 +163,6 @@
         </tbody>
       </table>
     </main>
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -29,7 +29,7 @@ body {
 /* Visible grid like your red structure */
 .essay-table td {
   /* red grid lines */
-  /* border: 2px solid #e53935; */
+  border: 2px solid #e53935;
   vertical-align: top;
 }
 

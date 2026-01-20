@@ -28,32 +28,25 @@ document.querySelectorAll(".video-wrapper").forEach((wrap) => {
     setUI();
   }
 
-  // Playbutton toggelt
   playBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     togglePlay();
   });
 
-  // Klick aufs Video toggelt
   video.addEventListener("click", () => {
     togglePlay();
   });
 
-  // Fullscreen pro Wrapper
   fsBtn.addEventListener("click", async (e) => {
     e.stopPropagation();
     try {
-      if (document.fullscreenElement) {
-        await document.exitFullscreen();
-      } else {
-        await wrap.requestFullscreen();
-      }
+      if (document.fullscreenElement) await document.exitFullscreen();
+      else await wrap.requestFullscreen();
     } catch (err) {
       console.warn("Fullscreen failed:", err);
     }
   });
 
-  // Sync
   video.addEventListener("play", setUI);
   video.addEventListener("pause", setUI);
   video.addEventListener("ended", setUI);
